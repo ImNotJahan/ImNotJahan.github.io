@@ -24,4 +24,4 @@ function grabMessages()
 
 grabMessages();
 
-document.getElementById("send-form").action = "databaseUrl";
+document.getElementById("send-form").action = databaseUrl;

@@ -12,7 +12,7 @@ input
   font-family: Consolas;
 }
 
-#messages
+#messages, #usernames
 {
   border: solid;
   border-color: white;

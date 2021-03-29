@@ -33,3 +33,8 @@ input
   position: relative;
   height: 100%;
 }
+
+#message-text
+{
+  font-family: Times;
+}

@@ -1,0 +1,19 @@
+body
+{
+    background-color: #282828;
+    font-family: Consolas;
+    color: white;
+}
+
+input
+{
+  background-color: #141414;
+  color: #eeeeee;
+  font-family: Consolas;
+}
+
+#messages
+{
+  border: solid;
+  border-color: white;
+}

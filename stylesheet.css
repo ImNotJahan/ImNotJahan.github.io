@@ -1,7 +1,7 @@
 body
 {
     background-color: #282828;
-    font-family: Consolas;
+    font-family: Consolas, Mono;
     color: white;
 }
 
@@ -9,7 +9,7 @@ input
 {
   background-color: #141414;
   color: #eeeeee;
-  font-family: Consolas;
+  font-family: Consolas, Mono;
 }
 
 #messages, #usernames

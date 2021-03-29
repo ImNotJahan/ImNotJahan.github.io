@@ -22,6 +22,14 @@ function grabMessages()
   })();
 }
 
+var frm = document.getElementById("send-form");
+
+function sendData()
+{
+  frm.submit();
+  frm.reset();
+}
+
 setInterval(function() {grabMessages();}, 1000);
 
 document.getElementById("send-form").action = databaseUrl;

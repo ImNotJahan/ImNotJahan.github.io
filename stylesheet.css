@@ -16,10 +16,25 @@ input
 {
   border: solid;
   border-color: white;
-  width: 33%;
 }
 
 .username
 {
   color: #f39c12;
+}
+
+.sidebyside
+{
+  float:left;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+  position: relative;
+  height: 100%;
 }

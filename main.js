@@ -1,5 +1,5 @@
-var usernameInput = document.getElementById("username");
-var ipInput = document.getElementById("ip");
+var usernameInput = document.getElementById("username-input");
+var ipInput = document.getElementById("ip-input");
 
 var usernameEntries = [];
 

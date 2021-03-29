@@ -26,9 +26,10 @@
     <section>
       <iframe name="send-frame" style="display:none;"></iframe>
       
-      <form action="test-url" method="post" id="send-form" target="send-frame" autocomplete="off" onsubmit="preChatSend()">
+      <form action="test-url" method="post" id="send-form" target="send-frame" autocomplete="off">
         <input name="message" id="message-input">
         <input type="submit" value="Send">
+        <input type="hidden" name="ip">
       </form>
     </section>
   </body>

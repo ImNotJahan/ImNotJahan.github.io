@@ -1,4 +1,4 @@
-var databaseUrl = "35f67429c67b.ngrok.io" + "/messages.txt"
+var databaseUrl = "https://35f67429c67b.ngrok.io" + "/messages.txt"
 
 var usernameInput = document.getElementById("username-input");
 var ipInput = document.getElementById("ip-input");

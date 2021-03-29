@@ -23,11 +23,6 @@ input
   color: #f39c12;
 }
 
-.sidebyside
-{
-  float:left;
-}
-
 .row {
   display: flex;
 }

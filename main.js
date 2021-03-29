@@ -27,7 +27,7 @@ var frm = document.getElementById("send-form");
 function sendData()
 {
   frm.submit();
-  frm.reset();
+  frm.childNodes[0].value = "";
 }
 
 setInterval(function() {grabMessages();}, 1000);

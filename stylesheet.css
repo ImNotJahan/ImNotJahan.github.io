@@ -16,5 +16,10 @@ input
 {
   border: solid;
   border-color: white;
-  width: 33%
+  width: 33%;
+}
+
+.username
+{
+  color: #f39c12;
 }

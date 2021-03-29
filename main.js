@@ -15,7 +15,8 @@ var messages = document.getElementById("message-text");
 function grabMessages()
 {
   (async () => {
-    const response = await fetch(databaseUrl + "/messages.txt", {mode: "cors"});
+    var date = new Date();
+    const response = await fetch(databaseUrl + "/messages.txt?v" + date.getTime(), {mode: "cors"});
     const text = await response.text();
     
     messages.innerHTML = text;

@@ -22,9 +22,6 @@ function grabMessages()
   })();
 }
 
-(function(){
-    grabMessages();
-    setTimeout(arguments.callee, 1000);
-})();
+setInterval(grabMessages(), 1000);
 
 document.getElementById("send-form").action = databaseUrl;

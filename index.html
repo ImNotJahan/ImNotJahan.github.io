@@ -17,8 +17,8 @@
       <section id="usernames" class="column">
         <p id="username-list"></p>
 
-        <input id="username-input" placeholder="Username" autofill="false">
-        <input id="ip-input" placeholder="IP" autofill="false">
+        <input id="username-input" placeholder="Username" autocomplete="off">
+        <input id="ip-input" placeholder="IP" autocomplete="off">
         <input type="submit" value="Add entry" onpress="addUsernameEntry()">
       </section>
     </div>
@@ -26,7 +26,7 @@
     <section>
       <iframe name="send-frame" style="display:none;"></iframe>
       
-      <form action="test-url" method="post" id="send-form" target="send-frame" autofill="false">
+      <form action="test-url" method="post" id="send-form" target="send-frame" autocomplete="off">
         <input name="message">
         <input type="submit" value="Send">
       </form>

@@ -22,6 +22,9 @@ function grabMessages()
   })();
 }
 
-grabMessages();
+(function(){
+    grabMessages();
+    setTimeout(arguments.callee, 60000);
+})();
 
 document.getElementById("send-form").action = databaseUrl;

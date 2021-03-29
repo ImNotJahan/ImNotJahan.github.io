@@ -24,7 +24,7 @@ function grabMessages()
 
 (function(){
     grabMessages();
-    setTimeout(arguments.callee, 60000);
+    setTimeout(arguments.callee, 1000);
 })();
 
 document.getElementById("send-form").action = databaseUrl;

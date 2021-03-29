@@ -1,3 +1,5 @@
+var databaseUrl = "35f67429c67b.ngrok.io" + "/messages.txt"
+
 var usernameInput = document.getElementById("username-input");
 var ipInput = document.getElementById("ip-input");
 
@@ -13,7 +15,7 @@ var messages = document.getElementById("message-text");
 function grabMessages()
 {
   (async () => {
-    const response = await fetch("imnotjahan.github.io");
+    const response = await fetch(databaseUrl);
     const text = await response.text();
     
     messages.innerHTML = text;

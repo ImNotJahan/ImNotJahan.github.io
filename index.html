@@ -9,9 +9,21 @@
   </head>
   
   <body>
-    <section id="messages">
-      <p>Example messages</p>
-    </section>
+    <div class="row">
+      <div class="column">
+        <section id="messages">
+          <p id="message-text">Example messages</p>
+        </section>
+        
+        <section id="usernames">
+          <p id="username-list"></p>
+          
+          <div class="side-by-side">
+            <input id="username" placeholder="Username"><input id="ip" placeholder="IP">
+          </div>
+        </section>
+      </div>
+    </div>
     
     <section>
       <form action="test-url" method="post">

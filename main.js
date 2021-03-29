@@ -10,6 +10,8 @@ function addUsernameEntry()
   usernameEntries.push([usernameInput.value, ipInput.value]);
 }
 
+var messageInput = document.getElementById("message-input");
+
 function preChatSend()
 {
   messageInput.value = "\n<b class=\"username\"></b> " + messageInput + "<br>";

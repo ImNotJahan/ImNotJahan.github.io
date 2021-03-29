@@ -5,7 +5,7 @@ body
     color: white;
 }
 
-input
+input, button
 {
   background-color: #141414;
   color: #eeeeee;

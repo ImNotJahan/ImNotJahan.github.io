@@ -1,4 +1,4 @@
-var databaseUrl = "https://35f67429c67b.ngrok.io" + "/messages.txt"
+var databaseUrl = "https://35f67429c67b.ngrok.io";
 
 var usernameInput = document.getElementById("username-input");
 var ipInput = document.getElementById("ip-input");
@@ -15,7 +15,7 @@ var messages = document.getElementById("message-text");
 function grabMessages()
 {
   (async () => {
-    const response = await fetch(databaseUrl, {mode: "cors"});
+    const response = await fetch(databaseUrl + "/messages.txt", {mode: "cors"});
     const text = await response.text();
     
     messages.innerHTML = text;
@@ -23,3 +23,5 @@ function grabMessages()
 }
 
 grabMessages();
+
+document.getElementById("send-form").action = "databaseUrl";

@@ -15,14 +15,20 @@ var loading = true;
 
 function grabMessages()
 {
-  (async () => {
-    var date = new Date();
-    const response = await fetch(databaseUrl + "/messages.txt?v" + date.getTime(), {mode: "cors"});
-    const text = await response.text();
-    
-    messages.innerHTML = text;
-    loading = false;
-  })();
+  try
+  {
+    (async () => {
+      var date = new Date();
+      const response = await fetch(databaseUrl + "/messages.txt?v" + date.getTime(), {mode: "cors"});
+      const text = await response.text();
+
+      messages.innerHTML = text;
+      loading = false;
+    })();
+  } catch(e)
+  {
+    console.log(e)
+  }
 }
 
 var frm = document.getElementById("send-form");

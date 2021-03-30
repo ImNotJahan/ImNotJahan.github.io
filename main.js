@@ -11,6 +11,7 @@ function addUsernameEntry()
 }
 
 var messages = document.getElementById("message-text");
+var loading = true;
 
 function grabMessages()
 {
@@ -20,6 +21,7 @@ function grabMessages()
     const text = await response.text();
     
     messages.innerHTML = text;
+    loading = false;
   })();
 }
 
@@ -34,3 +36,20 @@ function sendData()
 setInterval(function() {grabMessages();}, 1000);
 
 document.getElementById("send-form").action = databaseUrl;
+
+var loadingText = document.getElementById("loading-text");
+while(loading)
+{
+  var waiting = false;
+  for(var k = 0; k < 4; k++)
+  {
+    if(!waiting)
+    {
+      loadingText.innerHTML = "Loading" += ".".repeat(k);
+      setTimeout(() => { waiting = true }, 2000);
+    } else
+    {
+      k--;
+    }
+  }
+}

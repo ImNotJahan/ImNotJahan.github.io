@@ -45,8 +45,8 @@ while(loading)
   {
     if(!waiting)
     {
-      loadingText.innerHTML = "Loading" += ".".repeat(k);
-      setTimeout(() => { waiting = true }, 2000);
+      loadingText.innerHTML = "Loading" + ".".repeat(k);
+      setTimeout(() => { waiting = true }, 500);
     } else
     {
       k--;

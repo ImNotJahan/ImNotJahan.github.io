@@ -38,18 +38,16 @@ setInterval(function() {grabMessages();}, 1000);
 document.getElementById("send-form").action = databaseUrl;
 
 var loadingText = document.getElementById("loading-text");
-while(loading)
-{
-  var waiting = false;
-  for(var k = 0; k < 4; k++)
-  {
-    if(!waiting)
+
+var k = 0;
+(function waitLoop() {
+  setTimeout(function() {
+    loadingText.innerHTML = "Loading" + ".".repeat(k % 4);
+    k++;
+    
+    if(loading)
     {
-      loadingText.innerHTML = "Loading" + ".".repeat(k);
-      setTimeout(() => { waiting = true }, 500);
-    } else
-    {
-      k--;
-    }
-  }
-}
+      waitLoop()
+    };
+  }, 500)
+});

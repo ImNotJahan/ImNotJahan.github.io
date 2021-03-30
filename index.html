@@ -4,14 +4,14 @@
 
 <html>
   <head>
-    <title>test</title>
+    <title>Bad chat site</title>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   
   <body>
     <div class="row">
       <section id="messages" class="column">
-        <p id="message-text"><b class="username">Loading</b></p>
+        <p id="message-text"><b class="username" id="loading-text">Loading</b></p>
       </section>
         
       <section id="usernames" class="column">
@@ -26,9 +26,9 @@
     <section>
       <iframe name="send-frame" style="display:none;"></iframe>
       
-      <form action="test-url" method="post" id="send-form" target="send-frame" autocomplete="off">
-        <input name="message">
-        <button onpress="SendData()" >Send</button>
+      <form action="test-url" method="post" id="send-form" target="send-frame">
+        <input name="message" autocomplete="off">
+        <button onpress="SendData()">Send</button>
       </form>
     </section>
   </body>

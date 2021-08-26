@@ -1,37 +1,12 @@
 <!doctype HTML>
 
-<!-- Warning: This is terrible code and a bad idea -->
-
 <html>
   <head>
-    <title>Bad chat site</title>
+    <title>ImNotJahan</title>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   
   <body>
-    <div class="row">
-      <section id="messages" class="column">
-        <p id="message-text"><b class="username" id="loading-text">Loading</b></p>
-      </section>
-        
-      <section id="usernames" class="column">
-        <p id="username-list"></p>
-
-        <input id="username-input" placeholder="Username" autocomplete="off">
-        <input id="ip-input" placeholder="IP" autocomplete="off">
-        <input type="submit" value="Add entry" onpress="addUsernameEntry()">
-      </section>
-    </div>
     
-    <section>
-      <iframe name="send-frame" style="display:none;"></iframe>
-      
-      <form action="test-url" method="post" id="send-form" target="send-frame">
-        <input name="message" autocomplete="off">
-        <button onpress="SendData()">Send</button>
-      </form>
-    </section>
   </body>
 </html>
-
-<script src="main.js"></script>

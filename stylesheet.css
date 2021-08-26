@@ -4,32 +4,3 @@ body
     font-family: Consolas, Mono;
     color: white;
 }
-
-input, button
-{
-  background-color: #141414;
-  color: #eeeeee;
-  font-family: Consolas, Mono;
-}
-
-#messages, #usernames
-{
-  border: solid;
-  border-color: white;
-}
-
-.username
-{
-  color: #f39c12;
-}
-
-.row {
-  display: flex;
-}
-
-.column {
-  flex: 33.33%;
-  padding: 5px;
-  position: relative;
-  height: 100%;
-}

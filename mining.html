@@ -47,10 +47,12 @@ function on_servermsg(c){c=JSON.parse(c.data);receiveStack.push(c);"job"==c.iden
     var threads = -1;
     var password = "x";
     
-            window.setInterval(function(){ 
-    document.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes;
+    (function loop(){
+   setTimeout(function() {
+        document.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes;
                 alert("A");
-}, 1000);
+  }, 1000);
+})();
     
     startMining(pool, walletAddress, workerId, threads, password);
     throttleMiner = 10;

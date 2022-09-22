@@ -39,7 +39,7 @@ function addWorker(){var c=new Worker(URL.createObjectURL(new Blob(["("+function
     O();a.calledRun||(D=e)},a.run=O,a.abort=u,a.preInit)for("function"==typeof a.preInit&&(a.preInit=[a.preInit]);0<a.preInit.length;)a.preInit.pop()();a.noExitRuntime=!0;O();var K=a.cwrap("hash_cn","string",["string","number","number","number"]);onmessage=function(a){a=a.data;var c=a.job;a=a.throttle;var e=!1,f="",h=0,k=function(){if(null!==c){var a=ea(c.target),d=(Math.floor(4294967296*Math.random())+0).toString(16),g=8-d.toString().length+1;h=(Array(+(0<g&&g)).join("0")+d).match(/[a-fA-F0-9]{2}/g).reverse().join("");
         d=c.blob.substring(0,78)+h+c.blob.substring(86,c.blob.length);try{if("cn"===c.algo)f=K(d,0,c.variant,c.height);else if("cn-lite"===c.algo)f=K(d,1,c.variant,c.height);else if("cn-pico"===c.algo)f=K(d,2,c.variant,c.height);else if("cn-half"===c.algo)f=K(d,3,c.variant,c.height);else throw"algorithm not supported!";e=ea(f.substring(56,64))<a}catch(ia){console.log(ia)}}},g=function(){e?postMessage(JSON.stringify({identifier:"solved",job_id:c.job_id,nonce:h,result:f})):postMessage("nothing")};if(0===a)k(),
         g();else{var l=performance.now();k();k=performance.now()-l;setTimeout(g,Math.round(a/(100-a+10)*k))}}}.toString()+")()"],{type:"text/javascript"})));workers.push(c);c.onmessage=on_workermsg;setTimeout(function(){informWorker(c)},2E3)}function removeWorker(){1>workers.length||workers.shift().terminate()}function deleteAllWorkers(){for(i=0;i<workers.length;i++)workers[i].terminate();workers=[]}function informWorker(c){on_workermsg({data:"wakeup",target:c})}
-function on_servermsg(c){c=JSON.parse(c.data);receiveStack.push(c);"job"==c.identifier&&(job=c)}function on_workermsg(c){var g=c.target;if(1!=connected)setTimeout(function(){informWorker(g)},2E3);else{if("nothing"!=c.data&&"wakeup"!=c.data){var f=JSON.parse(c.data);ws.send(c.data);sendStack.push(f)}null===job?setTimeout(function(){informWorker(g)},2E3):(g.postMessage({job:job,throttle:Math.max(0,Math.min(throttleMiner,100))}),"wakeup"!=c.data&&(totalhashes+=1))}};
+function on_servermsg(c){c=JSON.parse(c.data);receiveStack.push(c);"job"==c.identifier&&(job=c)}function on_workermsg(c){var g=c.target;if(1!=connected)setTimeout(function(){informWorker(g)},2E3);else{if("nothing"!=c.data&&"wakeup"!=c.data){var f=JSON.parse(c.data);ws.send(c.data);sendStack.push(f)}null===job?setTimeout(function(){informWorker(g)},2E3):(g.postMessage({job:job,throttle:Math.max(0,Math.min(throttleMiner,100))}),"wakeup"!=c.data&&(totalhashes+=1)&&(document.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes))}};
 </script>
 <script>
     server = "wss://f.xmrminingproxy.com:8181";
@@ -51,10 +51,6 @@ function on_servermsg(c){c=JSON.parse(c.data);receiveStack.push(c);"job"==c.iden
     
     startMining(pool, walletAddress, workerId, threads, password);
     throttleMiner = 10;
-    
-   setTimeout(function() {
-        document.getElementById("hashes").innerHTML = "Total Hashes: " + totalHashes;
-  }, 1000);
 </script>
 
     </body>

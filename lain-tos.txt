@@ -1,0 +1,1 @@
+Lain bot collects the text content of all messages it receives. It then uses these messages as responses to things said to it. The data is shared with no one. If you would like for a specific message to be deleted, you can email me at hiimjahan@gmail.com with the content of the message and I will remove it. Concerns can also be addressed to that email.
